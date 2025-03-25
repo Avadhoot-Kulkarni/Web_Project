@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PharmaShop - Your Trusted Pharmacy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="index">
+    <div class="container">
+        <div class="header">
+            <h1>PharmaShop</h1>
+            <p>Your one-stop solution for medicines</p>
+        </div>
+
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab('login')">Login</button>
+            <button class="tablinks" onclick="openTab('signup')">Sign Up</button>
+        </div>
+        
+        <div id="login" class="tabcontent" style="display: block;">
+            <form onsubmit="login(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="signup" class="tabcontent" style="display: none;">
+            <form onsubmit="signup(event)">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medicines - PharmaShop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="medicines">
+    <div class="nav">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search medicines..." oninput="filterMedicines()">
+        </div>
+        <button onclick="window.location.href='cart.html'">View Cart</button>
+    </div>
+    <div class="medicine-grid" id="medicineList">
+        <div class="loading">Loading medicines...</div>
+    </div>
+    <div class="pagination" id="pagination"></div>
+    <div class="track-icon" onclick="trackOrderPrompt()">📦</div>
+    <footer>
+        <h3>Contact Us</h3>
+        <p>Email: support@pharmashop.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Address: 123 Health Street, MediCity, India</p>
+        <p>&copy; 2025 PharmaShop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

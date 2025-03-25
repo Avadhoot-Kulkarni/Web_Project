@@ -1,0 +1,766 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.index {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+body.index::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Screenshot\ 2025-03-25\ 212614.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 1.2;
+    z-index: -1;
+}
+
+.container {
+    max-width: 550px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 70px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-left: 5%;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: #2e7d32;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.tab {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.tab button {
+    background: none;
+    border: none;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    width: 50%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tab button:hover {
+    color: #2e7d32;
+}
+
+.tab button.active {
+    color: #2e7d32;
+    border-bottom: 3px solid #2e7d32;
+}
+
+.form-group {
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2e7d32;
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
+}
+
+button[type="submit"] {
+    background: linear-gradient(90deg, #2e7d32, #388e3c);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #1b5e20, #2e7d32);
+    transform: translateY(-2px);
+}
+
+.tabcontent {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container::before {
+    content: '+';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 100px;
+    color: rgba(46, 125, 50, 0.1);
+    transform: rotate(45deg);
+}
+
+body.cart {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    background: linear-gradient(90deg, #006400, #004d00);
+    color: white;
+    padding: 15px;
+    text-align: right;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav button {
+    background: #fff;
+    color: #006400;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.3s;
+}
+
+.nav button:hover {
+    background: #e0e0e0;
+}
+
+.cart-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.cart-item {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.cart-item:hover {
+    transform: translateY(-3px);
+}
+
+.cart-item h3 {
+    margin: 0;
+    color: #333;
+}
+
+.cart-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    background: #006400;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 5px;
+}
+
+.quantity-btn:hover {
+    background: #004d00;
+}
+
+.remove-btn {
+    background: #dc3545;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.remove-btn:hover {
+    background: #c82333;
+}
+
+.bill-details {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.bill-details p {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.bill-details .subtotal {
+    color: #666;
+}
+
+.bill-details .tax {
+    color: #e67e22;
+}
+
+.bill-details .total {
+    font-size: 1.5em;
+    color: #006400;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.proceed-btn {
+    background: linear-gradient(90deg, #006400, #004d00);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: transform 0.2s;
+}
+
+.proceed-btn:hover {
+    transform: scale(1.02);
+}
+
+body.billing {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f2e0, #f5f5f5);
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.billing-container {
+    max-width: 700px;
+    width: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.billing-container:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: #006400;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.billing h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.billing h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #006400;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.billing .form-group {
+    margin: 25px 0;
+    position: relative;
+}
+
+.billing label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.billing input, .billing textarea, .billing select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background: #fafafa;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.billing input:focus, .billing textarea:focus, .billing select:focus {
+    border-color: #006400;
+    box-shadow: 0 0 8px rgba(0, 100, 0, 0.3);
+    outline: none;
+    background: #fff;
+}
+
+.billing textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.billing select {
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="%23006400" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 15px center;
+    background-size: 12px;
+    padding-right: 35px;
+}
+
+.billing button {
+    background: linear-gradient(90deg, #006400, #004d00);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+.billing button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 100, 0, 0.4);
+}
+
+.billing .form-group::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #006400;
+    transition: width 0.3s ease;
+}
+
+.billing .form-group:hover::before {
+    width: 100%;
+}
+
+.billing-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 100, 0, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: -1;
+    animation: pulse 10s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.success-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.success-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    animation: slideIn 0.5s ease-out;
+}
+
+.success-content h3 {
+    color: #4a4a4a;
+    font-size: 2em;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.success-content p {
+    color: #666;
+    font-size: 1.2em;
+    margin: 0 0 30px;
+}
+
+.success-content .home-btn {
+    background: linear-gradient(90deg, #4a4a4a, #3c3c3c);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.success-content .home-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(74, 74, 74, 0.4);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+body.medicines {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.medicines .nav {
+    background: linear-gradient(90deg, #2e7d32, #388e3c);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.medicines .nav button {
+    background: #fff;
+    color: #2e7d32;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.medicines .nav button:hover {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 200px;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #2e7d32;
+}
+
+.medicine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.medicine-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.medicine-card:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.medicine-card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.medicine-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.medicine-card h3 {
+    color: #2e7d32;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.medicine-card p {
+    color: #555;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.add-to-cart {
+    background: linear-gradient(90deg, #4a4a4a, #6b6b6b);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background: linear-gradient(90deg, #3c3c3c, #5a5a5a);
+}
+
+.add-to-cart:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.pagination button {
+    background: #2e7d32;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.pagination button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: #1b5e20;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #2e7d32;
+    margin: 50px;
+}
+
+.track-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #006400;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.track-icon:hover {
+    background: #004d00;
+}
+
+body.track-order {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f2e0, #f5f5f5);
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+body.track-order::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://thumbs.dreamstime.com/z/healthcare-technology-doctor-using-digital-tablet-icon-medical-network-hospital-background-162019727.jpg?ct=jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.tracking-container {
+    max-width: 700px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.home-btn {
+    background: linear-gradient(90deg, #006400, #004d00);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s ease;
+}
+
+.home-btn:hover {
+    background: linear-gradient(90deg, #004d00, #003300);
+}
+
+footer {
+    background: linear-gradient(90deg, #2e7d32, #388e3c);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+footer p {
+    font-size: 1em;
+    margin: 5px 0;
+}
