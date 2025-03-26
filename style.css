@@ -23,7 +23,7 @@ body.index::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('./Screenshot\ 2025-03-25\ 212614.png');
+    background-image: url('./img.png');
     background-size: cover;
     background-position: center;
     opacity: 1.2;
@@ -309,8 +309,22 @@ body.billing {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
 }
 
+body.billing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./billingpgimg.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 1.2;
+    z-index: -1;
+}
 .billing-container {
     max-width: 700px;
     width: 100%;
